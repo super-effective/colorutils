@@ -1,4 +1,4 @@
-# ColorUtil
+# ColorUtils
 
 A color utility to help with converting between formats and getting color details
 
@@ -9,7 +9,7 @@ Converts a HEX color string to its RGB values
 
 #### Example
 ```js
-import { hexToRgb } from 'colorutil';
+import { hexToRgb } from 'colorutils';
 
 const rgb = hexToRgb('#ff0000');
 
@@ -24,7 +24,7 @@ Converts HSV color values to its RGB values
 
 #### Example
 ```js
-import { hsvToRgb } from 'colorutil';
+import { hsvToRgb } from 'colorutils';
 
 const rgb = hsvToRgb(0.5, 1, 1);
 
@@ -39,7 +39,7 @@ Converts RGB values to a HEX color string
 
 #### Example
 ```js
-import { rgbToHex } from 'colorutil';
+import { rgbToHex } from 'colorutils';
 
 const hex = rgbToHex(0, 255, 0);
 
@@ -54,7 +54,7 @@ Converts HSV values to a HEX color string
 
 #### Example
 ```js
-import { hsvToHex } from 'colorutil';
+import { hsvToHex } from 'colorutils';
 
 const hex = hsvToHex(240, 1, 1);
 
@@ -69,7 +69,7 @@ Converts a HEX color string to a HSV values
 
 #### Example
 ```js
-import { hexToHsv } from 'colorutil';
+import { hexToHsv } from 'colorutils';
 
 const hsv = hexToHsv('#ff00ff');
 
@@ -83,7 +83,7 @@ See: https://www.w3.org/TR/AERT/#color-contrast
 
 #### Example
 ```js
-import { getPerceivedLuminance } from 'colorutil';
+import { getPerceivedLuminance } from 'colorutils';
 
 const perceivedLum = getPerceivedLuminance('#000000');
 

@@ -5,7 +5,7 @@ import {
   hsvToHex,
   hsvToRgb,
   rgbToHex,
-} from './colorutil';
+} from './colorutils';
 
 // Known HEX Values
 const HEX_TEAL = '#3cd6bf';
