@@ -85,8 +85,8 @@ See: https://www.w3.org/TR/AERT/#color-contrast
 ```js
 import { getPerceivedLuminance } from 'colorutil';
 
-const percep = getPerceivedLuminance('#000000');
+const perceivedLum = getPerceivedLuminance('#000000');
 
-console.log(hsv);
+console.log(perceivedLum);
 // 0
 ```
