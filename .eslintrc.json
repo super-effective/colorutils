@@ -16,6 +16,7 @@
   ],
   "rules": {
     "max-len": ["warn", { "code": 120 }],
+    "no-multiple-empty-lines": ["error", { "max": 2, "maxEOF": 0 }],
     "no-plusplus": ["error", { "allowForLoopAfterthoughts": true }],
     "no-use-before-define": "off"
   },
