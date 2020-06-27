@@ -14,13 +14,36 @@
  * @property {number} value - The value of the color (0.0 - 1.0)
  */
 
+
+/**
+ * Removes invalid characters and formats color hex to 6 characters
+ * @param {string} colorHex The color value in hex format to sanitize
+ */
+export function sanitizeHex(colorHex) {
+  let sanitizedHex = colorHex.replace(/[^a-fA-F0-9]/g, '');
+
+  if (sanitizedHex.length === 0) {
+    sanitizedHex = '000000';
+  } else if (sanitizedHex.length === 1) {
+    sanitizedHex = sanitizedHex[0].repeat(6);
+  } else if (sanitizedHex.length === 2) {
+    sanitizedHex = `${sanitizedHex[0].repeat(3)}${sanitizedHex[1].repeat(3)}`;
+  } else if (sanitizedHex.length >= 3 && sanitizedHex.length < 6) {
+    sanitizedHex = `${sanitizedHex[0].repeat(2)}${sanitizedHex[1].repeat(2)}${sanitizedHex[2].repeat(2)}`;
+  } else if (sanitizedHex.length > 6) {
+    sanitizedHex = sanitizedHex.substr(0, 6);
+  }
+
+  return `#${sanitizedHex}`;
+}
+
 /**
  * Converts a hex color string to its red, green, and blue component values
  * @param {string} colorHex The color value in hex format
  * @returns {Rgb} The RGB values for the color
  */
 export function hexToRgb(colorHex) {
-  let sanitizedHex = colorHex.replace('#', '');
+  let sanitizedHex = colorHex.replace(/[^a-fA-F0-9]/g, '');
 
   if (sanitizedHex.length !== 6 && sanitizedHex.length !== 3) {
     throw new Error(`Color should be either 3 or 6 characters in length - received a length of ${sanitizedHex.length}`);

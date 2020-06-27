@@ -1,6 +1,6 @@
 {
   "name": "@super-effective/colorutils",
-  "version": "1.0.1",
+  "version": "1.1.0",
   "description": "A color utility to help with converting between formats and getting color details",
   "keywords": [
     "color",
