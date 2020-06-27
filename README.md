@@ -77,8 +77,30 @@ console.log(hsv);
 // Object { hue: 300, saturation: 1, value: 1 }
 ```
 
+### `sanitizeHex`
+Sanitizes a hex string - removing invalid characters and expanding it to 6 characters, e.g.:
+
+```
+#1    => #111111
+#12   => #111222
+#123  => #112233
+#1234 => #112233
+zz123 => #112233
+```
+
+
+#### Example
+```js
+import { sanitizeHex } from 'colorutils';
+
+const sanitizedHex = sanitizeHex('x123!');
+
+console.log(sanitizedHex);
+// #112233
+```
+
 ### `getPerceivedLuminance`
-Get the perceived brightness of a given color. 
+Get the perceived brightness of a given color.
 See: https://www.w3.org/TR/AERT/#color-contrast
 
 #### Example
