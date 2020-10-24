@@ -134,319 +134,330 @@ const HSV_MAGENTA = {
 /**
  * Get Perceptive Luminesces
  */
-test('getPerceivedLuminance', () => {
-  const pl = getPerceivedLuminance(RGB_TEAL.red, RGB_TEAL.green, RGB_TEAL.blue);
-  expect(pl).toBe(0.6483607843137255);
-});
+describe('getPerceivedLuminance', () => {
+  test('getPerceivedLuminance - color', () => {
+    const pl = getPerceivedLuminance(RGB_TEAL.red, RGB_TEAL.green, RGB_TEAL.blue);
+    expect(pl).toBe(0.6483607843137255);
+  });
 
-test('getPerceivedLuminance - white', () => {
-  const pl = getPerceivedLuminance(RGB_WHITE.red, RGB_WHITE.green, RGB_WHITE.blue);
-  expect(pl).toBe(1);
-});
+  test('getPerceivedLuminance - white', () => {
+    const pl = getPerceivedLuminance(RGB_WHITE.red, RGB_WHITE.green, RGB_WHITE.blue);
+    expect(pl).toBe(1);
+  });
 
-test('getPerceivedLuminance - black', () => {
-  const pl = getPerceivedLuminance(RGB_BLACK.red, RGB_BLACK.green, RGB_BLACK.blue);
-  expect(pl).toBe(0);
+  test('getPerceivedLuminance - black', () => {
+    const pl = getPerceivedLuminance(RGB_BLACK.red, RGB_BLACK.green, RGB_BLACK.blue);
+    expect(pl).toBe(0);
+  });
 });
 
 
 /**
  * HEX to RGB
  */
-test('hexToRgb', () => {
-  const teal = hexToRgb(HEX_TEAL);
-  expect(teal).toStrictEqual(RGB_TEAL);
-});
+describe('hexToRgb', () => {
+  test('hexToRgb - color', () => {
+    const teal = hexToRgb(HEX_TEAL);
+    expect(teal).toStrictEqual(RGB_TEAL);
+  });
 
 
-test('hexToRgb - white short', () => {
-  const white = hexToRgb('#fff');
-  expect(white).toStrictEqual(RGB_WHITE);
-});
+  test('hexToRgb - white short', () => {
+    const white = hexToRgb('#fff');
+    expect(white).toStrictEqual(RGB_WHITE);
+  });
 
-test('hexToRgb - white long', () => {
-  const white = hexToRgb(HEX_WHITE);
-  expect(white).toStrictEqual(RGB_WHITE);
-});
+  test('hexToRgb - white long', () => {
+    const white = hexToRgb(HEX_WHITE);
+    expect(white).toStrictEqual(RGB_WHITE);
+  });
 
-test('hexToRgb - black short', () => {
-  const white = hexToRgb('#000');
-  expect(white).toStrictEqual(RGB_BLACK);
-});
+  test('hexToRgb - black short', () => {
+    const white = hexToRgb('#000');
+    expect(white).toStrictEqual(RGB_BLACK);
+  });
 
-test('hexToRgb - black long', () => {
-  const white = hexToRgb(HEX_BLACK);
-  expect(white).toStrictEqual(RGB_BLACK);
-});
+  test('hexToRgb - black long', () => {
+    const white = hexToRgb(HEX_BLACK);
+    expect(white).toStrictEqual(RGB_BLACK);
+  });
 
-test('hexToRgb - short length throws an error', () => {
-  expect(() => hexToRgb('#00')).toThrow(Error);
-});
+  test('hexToRgb - short length throws an error', () => {
+    expect(() => hexToRgb('#00')).toThrow(Error);
+  });
 
-test('hexToRgb - long length throws an error', () => {
-  expect(() => hexToRgb('#0000000')).toThrow(Error);
-});
+  test('hexToRgb - long length throws an error', () => {
+    expect(() => hexToRgb('#0000000')).toThrow(Error);
+  });
 
-test('hexToRgb - invalid hex', () => {
-  expect(() => hexToRgb('#j@0000')).toThrow(Error);
+  test('hexToRgb - invalid hex', () => {
+    expect(() => hexToRgb('#j@0000')).toThrow(Error);
+  });
 });
 
 
 /**
  * HEX to HSV
  */
-test('hexToHsv', () => {
-  const teal = hexToHsv(HEX_TEAL);
-  expect(teal).toStrictEqual(HSV_TEAL);
-});
+describe('hsvToHex', () => {
+  test('hexToHsv - color', () => {
+    const teal = hexToHsv(HEX_TEAL);
+    expect(teal).toStrictEqual(HSV_TEAL);
+  });
 
-test('hexToHsv - white short', () => {
-  const white = hexToHsv('#fff');
-  expect(white).toStrictEqual(HSV_WHITE);
-});
+  test('hexToHsv - white short', () => {
+    const white = hexToHsv('#fff');
+    expect(white).toStrictEqual(HSV_WHITE);
+  });
 
-test('hexToHsv - white long', () => {
-  const white = hexToHsv(HEX_WHITE);
-  expect(white).toStrictEqual(HSV_WHITE);
-});
+  test('hexToHsv - white long', () => {
+    const white = hexToHsv(HEX_WHITE);
+    expect(white).toStrictEqual(HSV_WHITE);
+  });
 
-test('hexToHsv - black short', () => {
-  const white = hexToHsv('#000');
-  expect(white).toStrictEqual(HSV_BLACK);
-});
+  test('hexToHsv - black short', () => {
+    const white = hexToHsv('#000');
+    expect(white).toStrictEqual(HSV_BLACK);
+  });
 
-test('hexToHsv - black long', () => {
-  const white = hexToHsv(HEX_BLACK);
-  expect(white).toStrictEqual(HSV_BLACK);
-});
+  test('hexToHsv - black long', () => {
+    const white = hexToHsv(HEX_BLACK);
+    expect(white).toStrictEqual(HSV_BLACK);
+  });
 
-test('hexToHsv - short length throws an error', () => {
-  expect(() => hexToHsv('#00')).toThrow(Error);
-});
+  test('hexToHsv - short length throws an error', () => {
+    expect(() => hexToHsv('#00')).toThrow(Error);
+  });
 
-test('hexToHsv - long length throws an error', () => {
-  expect(() => hexToHsv('#0000000')).toThrow(Error);
-});
+  test('hexToHsv - long length throws an error', () => {
+    expect(() => hexToHsv('#0000000')).toThrow(Error);
+  });
 
-test('hexToHsv - invalid hex', () => {
-  expect(() => hexToHsv('#j@0000')).toThrow(Error);
-});
+  test('hexToHsv - invalid hex', () => {
+    expect(() => hexToHsv('#j@0000')).toThrow(Error);
+  });
 
-test('hexToHsv - red', () => {
-  const teal = hexToHsv(HEX_RED);
-  expect(teal).toStrictEqual(HSV_RED);
-});
+  test('hexToHsv - red', () => {
+    const teal = hexToHsv(HEX_RED);
+    expect(teal).toStrictEqual(HSV_RED);
+  });
 
-test('hexToHsv - yellow', () => {
-  const teal = hexToHsv(HEX_YELLOW);
-  expect(teal).toStrictEqual(HSV_YELLOW);
-});
+  test('hexToHsv - yellow', () => {
+    const teal = hexToHsv(HEX_YELLOW);
+    expect(teal).toStrictEqual(HSV_YELLOW);
+  });
 
-test('hexToHsv - green', () => {
-  const teal = hexToHsv(HEX_GREEN);
-  expect(teal).toStrictEqual(HSV_GREEN);
-});
+  test('hexToHsv - green', () => {
+    const teal = hexToHsv(HEX_GREEN);
+    expect(teal).toStrictEqual(HSV_GREEN);
+  });
 
-test('hexToHsv - cyan', () => {
-  const teal = hexToHsv(HEX_CYAN);
-  expect(teal).toStrictEqual(HSV_CYAN);
-});
+  test('hexToHsv - cyan', () => {
+    const teal = hexToHsv(HEX_CYAN);
+    expect(teal).toStrictEqual(HSV_CYAN);
+  });
 
-test('hexToHsv - blue', () => {
-  const teal = hexToHsv(HEX_BLUE);
-  expect(teal).toStrictEqual(HSV_BLUE);
-});
+  test('hexToHsv - blue', () => {
+    const teal = hexToHsv(HEX_BLUE);
+    expect(teal).toStrictEqual(HSV_BLUE);
+  });
 
-test('hexToHsv - magenta', () => {
-  const teal = hexToHsv(HEX_MAGENTA);
-  expect(teal).toStrictEqual(HSV_MAGENTA);
-});
+  test('hexToHsv - magenta', () => {
+    const teal = hexToHsv(HEX_MAGENTA);
+    expect(teal).toStrictEqual(HSV_MAGENTA);
+  });
 
 
-/**
- * HSV to HEX
- */
-test('hsvToHex', () => {
-  const teal = hsvToHex(HSV_TEAL.hue, HSV_TEAL.saturation, HSV_TEAL.value);
-  expect(teal).toBe(HEX_TEAL);
-});
+  /**
+   * HSV to HEX
+   */
+  test('hsvToHex - color', () => {
+    const teal = hsvToHex(HSV_TEAL.hue, HSV_TEAL.saturation, HSV_TEAL.value);
+    expect(teal).toBe(HEX_TEAL);
+  });
 
-test('hsvToHex - white', () => {
-  const white = hsvToHex(HSV_WHITE.hue, HSV_WHITE.saturation, HSV_WHITE.value);
-  expect(white).toBe(HEX_WHITE);
-});
+  test('hsvToHex - white', () => {
+    const white = hsvToHex(HSV_WHITE.hue, HSV_WHITE.saturation, HSV_WHITE.value);
+    expect(white).toBe(HEX_WHITE);
+  });
 
-test('hsvToHex - black', () => {
-  const black = hsvToHex(HSV_BLACK.hue, HSV_BLACK.saturation, HSV_BLACK.value);
-  expect(black).toBe(HEX_BLACK);
-});
+  test('hsvToHex - black', () => {
+    const black = hsvToHex(HSV_BLACK.hue, HSV_BLACK.saturation, HSV_BLACK.value);
+    expect(black).toBe(HEX_BLACK);
+  });
 
-// Bounds checks
-test('hsvToHex - invalid hue, < 0', () => {
-  expect(() => hsvToHex(-1, HSV_RED.saturation, HSV_RED.value)).toThrow(Error);
-});
+  // Bounds checks
+  test('hsvToHex - invalid hue, < 0', () => {
+    expect(() => hsvToHex(-1, HSV_RED.saturation, HSV_RED.value)).toThrow(Error);
+  });
 
-test('hsvToHex - invalid hue, > 1', () => {
-  expect(() => hsvToHex(361, HSV_RED.saturation, HSV_RED.value)).toThrow(Error);
-});
+  test('hsvToHex - invalid hue, > 1', () => {
+    expect(() => hsvToHex(361, HSV_RED.saturation, HSV_RED.value)).toThrow(Error);
+  });
 
-test('hsvToHex - invalid saturation, < 0', () => {
-  expect(() => hsvToHex(HSV_RED.hue, -1, HSV_RED.value)).toThrow(Error);
-});
+  test('hsvToHex - invalid saturation, < 0', () => {
+    expect(() => hsvToHex(HSV_RED.hue, -1, HSV_RED.value)).toThrow(Error);
+  });
 
-test('hsvToHex - invalid saturation, > 1', () => {
-  expect(() => hsvToHex(HSV_RED.hue, 1.1, HSV_RED.value)).toThrow(Error);
-});
+  test('hsvToHex - invalid saturation, > 1', () => {
+    expect(() => hsvToHex(HSV_RED.hue, 1.1, HSV_RED.value)).toThrow(Error);
+  });
 
-test('hsvToHex - invalid value, < 0', () => {
-  expect(() => hsvToHex(HSV_RED.hue, HSV_RED.saturation, -1)).toThrow(Error);
-});
+  test('hsvToHex - invalid value, < 0', () => {
+    expect(() => hsvToHex(HSV_RED.hue, HSV_RED.saturation, -1)).toThrow(Error);
+  });
 
-test('hsvToHex - invalid value, > 1', () => {
-  expect(() => hsvToHex(HSV_RED.hue, HSV_RED.saturation, 1.1)).toThrow(Error);
+  test('hsvToHex - invalid value, > 1', () => {
+    expect(() => hsvToHex(HSV_RED.hue, HSV_RED.saturation, 1.1)).toThrow(Error);
+  });
 });
 
 /**
  * HSV to RGB
  */
-test('hsvToRgb', () => {
-  const teal = hsvToRgb(HSV_TEAL.hue, HSV_TEAL.saturation, HSV_TEAL.value);
-  expect(teal).toStrictEqual(RGB_TEAL);
-});
+describe('hsvToRgb', () => {
+  test('hsvToRgb - color', () => {
+    const teal = hsvToRgb(HSV_TEAL.hue, HSV_TEAL.saturation, HSV_TEAL.value);
+    expect(teal).toStrictEqual(RGB_TEAL);
+  });
 
-test('hsvToRgb - white', () => {
-  const white = hsvToRgb(HSV_WHITE.hue, HSV_WHITE.saturation, HSV_WHITE.value);
-  expect(white).toStrictEqual(RGB_WHITE);
-});
+  test('hsvToRgb - white', () => {
+    const white = hsvToRgb(HSV_WHITE.hue, HSV_WHITE.saturation, HSV_WHITE.value);
+    expect(white).toStrictEqual(RGB_WHITE);
+  });
 
-test('hsvToRgb - black', () => {
-  const black = hsvToRgb(HSV_BLACK.hue, HSV_BLACK.saturation, HSV_BLACK.value);
-  expect(black).toStrictEqual(RGB_BLACK);
-});
+  test('hsvToRgb - black', () => {
+    const black = hsvToRgb(HSV_BLACK.hue, HSV_BLACK.saturation, HSV_BLACK.value);
+    expect(black).toStrictEqual(RGB_BLACK);
+  });
 
-// Bounds checks
-test('hsvToRgb - invalid hue, < 0', () => {
-  expect(() => hsvToRgb(-1, HSV_RED.saturation, HSV_RED.value)).toThrow(Error);
-});
+  // Bounds checks
+  test('hsvToRgb - invalid hue, < 0', () => {
+    expect(() => hsvToRgb(-1, HSV_RED.saturation, HSV_RED.value)).toThrow(Error);
+  });
 
-test('hsvToRgb - invalid hue, > 1', () => {
-  expect(() => hsvToRgb(361, HSV_RED.saturation, HSV_RED.value)).toThrow(Error);
-});
+  test('hsvToRgb - invalid hue, > 1', () => {
+    expect(() => hsvToRgb(361, HSV_RED.saturation, HSV_RED.value)).toThrow(Error);
+  });
 
-test('hsvToRgb - invalid saturation, < 0', () => {
-  expect(() => hsvToRgb(HSV_RED.hue, -1, HSV_RED.value)).toThrow(Error);
-});
+  test('hsvToRgb - invalid saturation, < 0', () => {
+    expect(() => hsvToRgb(HSV_RED.hue, -1, HSV_RED.value)).toThrow(Error);
+  });
 
-test('hsvToRgb - invalid saturation, > 1', () => {
-  expect(() => hsvToRgb(HSV_RED.hue, 1.1, HSV_RED.value)).toThrow(Error);
-});
+  test('hsvToRgb - invalid saturation, > 1', () => {
+    expect(() => hsvToRgb(HSV_RED.hue, 1.1, HSV_RED.value)).toThrow(Error);
+  });
 
-test('hsvToRgb - invalid value, < 0', () => {
-  expect(() => hsvToRgb(HSV_RED.hue, HSV_RED.saturation, -1)).toThrow(Error);
-});
+  test('hsvToRgb - invalid value, < 0', () => {
+    expect(() => hsvToRgb(HSV_RED.hue, HSV_RED.saturation, -1)).toThrow(Error);
+  });
 
-test('hsvToRgb - invalid value, > 1', () => {
-  expect(() => hsvToRgb(HSV_RED.hue, HSV_RED.saturation, 1.1)).toThrow(Error);
-});
+  test('hsvToRgb - invalid value, > 1', () => {
+    expect(() => hsvToRgb(HSV_RED.hue, HSV_RED.saturation, 1.1)).toThrow(Error);
+  });
 
+  // Color ranges
+  test('hsvToRgb - red', () => {
+    const teal = hsvToRgb(HSV_RED.hue, HSV_RED.saturation, HSV_RED.value);
+    expect(teal).toStrictEqual(RGB_RED);
+  });
 
-// Color ranges
-test('hsvToRgb - red', () => {
-  const teal = hsvToRgb(HSV_RED.hue, HSV_RED.saturation, HSV_RED.value);
-  expect(teal).toStrictEqual(RGB_RED);
-});
+  test('hsvToRgb - yellow', () => {
+    const teal = hsvToRgb(HSV_YELLOW.hue, HSV_YELLOW.saturation, HSV_YELLOW.value);
+    expect(teal).toStrictEqual(RGB_YELLOW);
+  });
 
-test('hsvToRgb - yellow', () => {
-  const teal = hsvToRgb(HSV_YELLOW.hue, HSV_YELLOW.saturation, HSV_YELLOW.value);
-  expect(teal).toStrictEqual(RGB_YELLOW);
-});
+  test('hsvToRgb - green', () => {
+    const teal = hsvToRgb(HSV_GREEN.hue, HSV_GREEN.saturation, HSV_GREEN.value);
+    expect(teal).toStrictEqual(RGB_GREEN);
+  });
 
-test('hsvToRgb - green', () => {
-  const teal = hsvToRgb(HSV_GREEN.hue, HSV_GREEN.saturation, HSV_GREEN.value);
-  expect(teal).toStrictEqual(RGB_GREEN);
-});
+  test('hsvToRgb - cyan', () => {
+    const teal = hsvToRgb(HSV_CYAN.hue, HSV_CYAN.saturation, HSV_CYAN.value);
+    expect(teal).toStrictEqual(RGB_CYAN);
+  });
 
-test('hsvToRgb - cyan', () => {
-  const teal = hsvToRgb(HSV_CYAN.hue, HSV_CYAN.saturation, HSV_CYAN.value);
-  expect(teal).toStrictEqual(RGB_CYAN);
-});
+  test('hsvToRgb - blue', () => {
+    const teal = hsvToRgb(HSV_BLUE.hue, HSV_BLUE.saturation, HSV_BLUE.value);
+    expect(teal).toStrictEqual(RGB_BLUE);
+  });
 
-test('hsvToRgb - blue', () => {
-  const teal = hsvToRgb(HSV_BLUE.hue, HSV_BLUE.saturation, HSV_BLUE.value);
-  expect(teal).toStrictEqual(RGB_BLUE);
-});
-
-test('hsvToRgb - magenta', () => {
-  const teal = hsvToRgb(HSV_MAGENTA.hue, HSV_MAGENTA.saturation, HSV_MAGENTA.value);
-  expect(teal).toStrictEqual(RGB_MAGENTA);
+  test('hsvToRgb - magenta', () => {
+    const teal = hsvToRgb(HSV_MAGENTA.hue, HSV_MAGENTA.saturation, HSV_MAGENTA.value);
+    expect(teal).toStrictEqual(RGB_MAGENTA);
+  });
 });
 
 
 /**
  * RGB to HEX
  */
-test('rgbToHex', () => {
-  const teal = rgbToHex(RGB_TEAL.red, RGB_TEAL.green, RGB_TEAL.blue);
-  expect(teal).toBe(HEX_TEAL);
-});
+describe('rgbToHex', () => {
+  test('rgbToHex - multi value', () => {
+    const teal = rgbToHex(RGB_TEAL.red, RGB_TEAL.green, RGB_TEAL.blue);
+    expect(teal).toBe(HEX_TEAL);
+  });
 
-test('rgbToHex - white', () => {
-  const white = rgbToHex(RGB_WHITE.red, RGB_WHITE.green, RGB_WHITE.blue);
-  expect(white).toBe(HEX_WHITE);
-});
+  test('rgbToHex - white', () => {
+    const white = rgbToHex(RGB_WHITE.red, RGB_WHITE.green, RGB_WHITE.blue);
+    expect(white).toBe(HEX_WHITE);
+  });
 
-test('rgbToHex - black', () => {
-  const black = rgbToHex(RGB_BLACK.red, RGB_BLACK.green, RGB_BLACK.blue);
-  expect(black).toBe(HEX_BLACK);
+  test('rgbToHex - black', () => {
+    const black = rgbToHex(RGB_BLACK.red, RGB_BLACK.green, RGB_BLACK.blue);
+    expect(black).toBe(HEX_BLACK);
+  });
 });
 
 /**
  * Sanitize Hex String
  */
-test('sanitizeHex', () => {
-  const validHex = '#ffffff';
-  const sanitizedHex = sanitizeHex(validHex);
-  expect(sanitizedHex).toStrictEqual(validHex);
-});
+describe('sanitizeHex', () => {
+  test('sanitizeHex - clean input', () => {
+    const validHex = '#ffffff';
+    const sanitizedHex = sanitizeHex(validHex);
+    expect(sanitizedHex).toStrictEqual(validHex);
+  });
 
-test('sanitizeHex - empty', () => {
-  const empty = '';
-  const sanitizedHex = sanitizeHex(empty);
-  expect(sanitizedHex).toStrictEqual(HEX_BLACK);
-});
+  test('sanitizeHex - empty', () => {
+    const empty = '';
+    const sanitizedHex = sanitizeHex(empty);
+    expect(sanitizedHex).toStrictEqual(HEX_BLACK);
+  });
 
-test('sanitizeHex - 1 character', () => {
-  const one = '1';
-  const sanitizedHex = sanitizeHex(one);
-  expect(sanitizedHex).toStrictEqual('#111111');
-});
+  test('sanitizeHex - 1 character', () => {
+    const one = '1';
+    const sanitizedHex = sanitizeHex(one);
+    expect(sanitizedHex).toStrictEqual('#111111');
+  });
 
-test('sanitizeHex - 2 characters', () => {
-  const two = '12';
-  const sanitizedHex = sanitizeHex(two);
-  expect(sanitizedHex).toStrictEqual('#111222');
-});
+  test('sanitizeHex - 2 characters', () => {
+    const two = '12';
+    const sanitizedHex = sanitizeHex(two);
+    expect(sanitizedHex).toStrictEqual('#111222');
+  });
 
-test('sanitizeHex - 3 characters', () => {
-  const three = '123';
-  const sanitizedHex = sanitizeHex(three);
-  expect(sanitizedHex).toStrictEqual('#112233');
-});
+  test('sanitizeHex - 3 characters', () => {
+    const three = '123';
+    const sanitizedHex = sanitizeHex(three);
+    expect(sanitizedHex).toStrictEqual('#112233');
+  });
 
-test('sanitizeHex - 4 characters', () => {
-  const four = '1234';
-  const sanitizedHex = sanitizeHex(four);
-  expect(sanitizedHex).toStrictEqual('#112233');
-});
+  test('sanitizeHex - 4 characters', () => {
+    const four = '1234';
+    const sanitizedHex = sanitizeHex(four);
+    expect(sanitizedHex).toStrictEqual('#112233');
+  });
 
-test('sanitizeHex - > 6 characters', () => {
-  const tooLong = '#cedefffffffffe123';
-  const sanitizedHex = sanitizeHex(tooLong);
-  expect(sanitizedHex).toStrictEqual('#cedeff');
-});
+  test('sanitizeHex - > 6 characters', () => {
+    const tooLong = '#cedefffffffffe123';
+    const sanitizedHex = sanitizeHex(tooLong);
+    expect(sanitizedHex).toStrictEqual('#cedeff');
+  });
 
-test('sanitizeHex - invalid chars', () => {
-  const invalidAtStart = 'Z`*(;3#%^21|/"32&1';
-  const sanitizedHex = sanitizeHex(invalidAtStart);
-  expect(sanitizedHex).toStrictEqual('#321321');
+  test('sanitizeHex - invalid chars', () => {
+    const invalidAtStart = 'Z`*(;3#%^21|/"32&1';
+    const sanitizedHex = sanitizeHex(invalidAtStart);
+    expect(sanitizedHex).toStrictEqual('#321321');
+  });
 });
