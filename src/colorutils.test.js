@@ -199,7 +199,7 @@ describe('hexToRgb', () => {
 /**
  * HEX to HSV
  */
-describe('hsvToHex', () => {
+describe('hexToHsv', () => {
   test('hexToHsv - color', () => {
     const teal = hexToHsv(HEX_TEAL);
     expect(teal).toStrictEqual(HSV_TEAL);
@@ -266,11 +266,12 @@ describe('hsvToHex', () => {
     const teal = hexToHsv(HEX_MAGENTA);
     expect(teal).toStrictEqual(HSV_MAGENTA);
   });
+});
 
-
-  /**
-   * HSV to HEX
-   */
+/**
+ * HSV to HEX
+ */
+describe('hsvToHex', () => {
   test('hsvToHex - color', () => {
     const teal = hsvToHex(HSV_TEAL.hue, HSV_TEAL.saturation, HSV_TEAL.value);
     expect(teal).toBe(HEX_TEAL);
@@ -459,5 +460,104 @@ describe('sanitizeHex', () => {
     const invalidAtStart = 'Z`*(;3#%^21|/"32&1';
     const sanitizedHex = sanitizeHex(invalidAtStart);
     expect(sanitizedHex).toStrictEqual('#321321');
+  });
+});
+
+describe('Consistency checks', () => {
+  test('hex > hsv > hex - teal', () => {
+    const startHex = HEX_TEAL;
+    const hsv = hexToHsv(startHex);
+    const hex = hsvToHex(hsv.hue, hsv.saturation, hsv.value);
+
+    expect(hex).toStrictEqual(startHex);
+  });
+
+  test('hex > hsv > hex - red', () => {
+    const startHex = HEX_RED;
+    const hsv = hexToHsv(startHex);
+    const hex = hsvToHex(hsv.hue, hsv.saturation, hsv.value);
+
+    expect(hex).toStrictEqual(startHex);
+  });
+
+  test('hex > hsv > hex - green', () => {
+    const startHex = HEX_GREEN;
+    const hsv = hexToHsv(startHex);
+    const hex = hsvToHex(hsv.hue, hsv.saturation, hsv.value);
+
+    expect(hex).toStrictEqual(startHex);
+  });
+
+  test('hex > hsv > hex - blue', () => {
+    const startHex = HEX_BLUE;
+    const hsv = hexToHsv(startHex);
+    const hex = hsvToHex(hsv.hue, hsv.saturation, hsv.value);
+
+    expect(hex).toStrictEqual(startHex);
+  });
+
+  test('hex > hsv > hex - black', () => {
+    const startHex = HEX_BLACK;
+    const hsv = hexToHsv(startHex);
+    const hex = hsvToHex(hsv.hue, hsv.saturation, hsv.value);
+
+    expect(hex).toStrictEqual(startHex);
+  });
+
+  test('hex > hsv > hex - white', () => {
+    const startHex = HEX_WHITE;
+    const hsv = hexToHsv(startHex);
+    const hex = hsvToHex(hsv.hue, hsv.saturation, hsv.value);
+
+    expect(hex).toStrictEqual(startHex);
+  });
+
+
+  test('hsv > hex > hsv - teal', () => {
+    const startHsv = HSV_TEAL;
+    const hex = hsvToHex(startHsv.hue, startHsv.saturation, startHsv.value);
+    const hsv = hexToHsv(hex);
+
+    expect(hsv).toStrictEqual(startHsv);
+  });
+
+  test('hsv > hex > hsv - red', () => {
+    const startHsv = HSV_RED;
+    const hex = hsvToHex(startHsv.hue, startHsv.saturation, startHsv.value);
+    const hsv = hexToHsv(hex);
+
+    expect(hsv).toStrictEqual(startHsv);
+  });
+
+  test('hsv > hex > hsv - green', () => {
+    const startHsv = HSV_GREEN;
+    const hex = hsvToHex(startHsv.hue, startHsv.saturation, startHsv.value);
+    const hsv = hexToHsv(hex);
+
+    expect(hsv).toStrictEqual(startHsv);
+  });
+
+  test('hsv > hex > hsv - blue', () => {
+    const startHsv = HSV_BLUE;
+    const hex = hsvToHex(startHsv.hue, startHsv.saturation, startHsv.value);
+    const hsv = hexToHsv(hex);
+
+    expect(hsv).toStrictEqual(startHsv);
+  });
+
+  test('hsv > hex > hsv - black', () => {
+    const startHsv = HSV_BLACK;
+    const hex = hsvToHex(startHsv.hue, startHsv.saturation, startHsv.value);
+    const hsv = hexToHsv(hex);
+
+    expect(hsv).toStrictEqual(startHsv);
+  });
+
+  test('hsv > hex > hsv - white', () => {
+    const startHsv = HSV_WHITE;
+    const hex = hsvToHex(startHsv.hue, startHsv.saturation, startHsv.value);
+    const hsv = hexToHsv(hex);
+
+    expect(hsv).toStrictEqual(startHsv);
   });
 });
