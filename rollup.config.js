@@ -1,13 +1,13 @@
-/* eslint-disable import/no-extraneous-dependencies */
 import babel from '@rollup/plugin-babel';
 import resolve from '@rollup/plugin-node-resolve';
 import commonjs from '@rollup/plugin-commonjs';
 import includePaths from 'rollup-plugin-includepaths';
+import typescript from 'rollup-plugin-typescript2';
 
 const packageJson = require('./package.json');
 
 export default {
-  input: './src/colorutils.js',
+  input: './src/colorutils.ts',
 
   output: [
     {
@@ -23,6 +23,7 @@ export default {
   ],
 
   plugins: [
+    typescript(),
     babel({
       babelHelpers: 'bundled',
       exclude: 'node_modules/**',
