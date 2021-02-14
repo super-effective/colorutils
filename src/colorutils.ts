@@ -6,6 +6,11 @@
  * @property {number} green - The green component of the color (0 - 255)
  * @property {number} blue - The blue component of the color (0 - 255)
  */
+type Rgb = {
+  red: number;
+  green: number;
+  blue: number;
+}
 
 /**
  * @typedef {Object} Hsv
@@ -13,13 +18,19 @@
  * @property {number} saturation - The saturation the color (0.0 - 1.0)
  * @property {number} value - The value of the color (0.0 - 1.0)
  */
+type Hsv = {
+  hue: number;
+  saturation: number;
+  value: number;
+}
 
 
 /**
  * Removes invalid characters and formats color hex to 6 characters
  * @param {string} colorHex The color value in hex format to sanitize
+ * @returns {string} The sanitized hex color
  */
-export function sanitizeHex(colorHex) {
+export function sanitizeHex(colorHex: string): string {
   let sanitizedHex = colorHex.replace(/[^a-fA-F0-9]/g, '');
 
   if (sanitizedHex.length === 0) {
@@ -42,7 +53,7 @@ export function sanitizeHex(colorHex) {
  * @param {string} colorHex The color value in hex format
  * @returns {Rgb} The RGB values for the color
  */
-export function hexToRgb(colorHex) {
+export function hexToRgb(colorHex: string): Rgb {
   let sanitizedHex = colorHex.replace(/[^a-fA-F0-9]/g, '');
 
   if (sanitizedHex.length !== 6 && sanitizedHex.length !== 3) {
@@ -77,7 +88,7 @@ export function hexToRgb(colorHex) {
  * @param {number} value The value of the color (0.0 - 1.0)
  * @returns {Rgb} The RGB values for the color
  */
-export function hsvToRgb(hue, saturation, value) {
+export function hsvToRgb(hue: number, saturation: number, value: number): Rgb {
   // Bounds check
   if ((hue < 0 || hue > 360)
       || (saturation < 0 || saturation > 1)
@@ -155,7 +166,7 @@ export function hsvToRgb(hue, saturation, value) {
  * @param {string} colorHex The color value in hex format
  * @returns {Hsv} The HSV values for the color
  */
-export function hexToHsv(colorHex) {
+export function hexToHsv(colorHex: string): Hsv {
   // Hex validation handled by hexToRgb
   const {
     red,
@@ -216,7 +227,7 @@ export function hexToHsv(colorHex) {
  * @param {number} blue The blue component of the color (0 - 255)
  * @returns {string} The hex string representation of the color
  */
-export function rgbToHex(red, green, blue) {
+export function rgbToHex(red: number, green: number, blue: number): string {
   const rgb = blue | (green << 8) | (red << 16);
 
   return `#${(0x1000000 + rgb).toString(16).slice(1)}`;
@@ -229,7 +240,7 @@ export function rgbToHex(red, green, blue) {
  * @param {number} value The value of the color (0.0 - 1.0)
  * @returns {string} The hex string representation of the color
  */
-export function hsvToHex(hue, saturation, value) {
+export function hsvToHex(hue: number, saturation: number, value: number): string {
   // Bounds check handled by hsvToRgb
   const {
     red,
@@ -249,6 +260,6 @@ export function hsvToHex(hue, saturation, value) {
  * @param {number} blue The blue component of the color (0 - 255)
  * @returns {number} The perceived brightness of the color (0.0 - 1.0)
  */
-export function getPerceivedLuminance(red, green, blue) {
+export function getPerceivedLuminance(red: number, green: number, blue: number): number {
   return ((red * 0.299) + (green * 0.587) + (blue * 0.114)) / 255;
 }
