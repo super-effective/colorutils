@@ -6,7 +6,7 @@
  * @property {number} green - The green component of the color (0 - 255)
  * @property {number} blue - The blue component of the color (0 - 255)
  */
-type Rgb = {
+export type Rgb = {
   red: number;
   green: number;
   blue: number;
@@ -18,7 +18,7 @@ type Rgb = {
  * @property {number} saturation - The saturation the color (0.0 - 1.0)
  * @property {number} value - The value of the color (0.0 - 1.0)
  */
-type Hsv = {
+export type Hsv = {
   hue: number;
   saturation: number;
   value: number;
