@@ -1,5 +1,5 @@
-import sanitizeHex from './sanitizeHex';
-import { HEX_BLACK } from './testData/colors';
+import sanitizeHex from '../sanitizeHex';
+import { HEX_BLACK } from './data/colors';
 
 /**
  * Sanitize Hex String

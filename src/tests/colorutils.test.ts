@@ -11,12 +11,12 @@ import {
   HSV_RED,
   HSV_TEAL,
   HSV_WHITE,
-} from './testData/colors';
+} from './data/colors';
 
 import {
   hexToHsv,
   hsvToHex,
-} from './colorutils';
+} from '../colorutils';
 
 describe('Consistency checks', () => {
   test('hex > hsv > hex - teal', () => {

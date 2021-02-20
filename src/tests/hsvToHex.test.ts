@@ -1,4 +1,4 @@
-import hsvToHex from './hsvToHex';
+import hsvToHex from '../hsvToHex';
 import {
   HSV_TEAL,
   HEX_TEAL,
@@ -7,7 +7,7 @@ import {
   HSV_BLACK,
   HEX_BLACK,
   HSV_RED,
-} from './testData/colors';
+} from './data/colors';
 
 /**
  * HSV to HEX

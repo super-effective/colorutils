@@ -1,4 +1,4 @@
-import cmykToRgb from './cmykToRgb';
+import cmykToRgb from '../cmykToRgb';
 import {
   CMYK_BLACK,
   CMYK_BLUE,
@@ -10,7 +10,7 @@ import {
   RGB_GREEN,
   RGB_RED,
   RGB_TEAL,
-} from './testData/colors';
+} from './data/colors';
 
 /**
  * CMYK to RGB

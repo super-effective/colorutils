@@ -1,4 +1,4 @@
-import hexToRgb from './hexToRgb';
+import hexToRgb from '../hexToRgb';
 import {
   HEX_TEAL,
   RGB_TEAL,
@@ -6,7 +6,7 @@ import {
   HEX_WHITE,
   RGB_BLACK,
   HEX_BLACK,
-} from './testData/colors';
+} from './data/colors';
 
 /**
  * HEX to RGB

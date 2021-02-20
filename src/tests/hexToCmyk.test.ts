@@ -1,4 +1,4 @@
-import hexToCmyk from './hexToCmyk';
+import hexToCmyk from '../hexToCmyk';
 import {
   CMYK_BLACK,
   CMYK_BLUE,
@@ -10,7 +10,7 @@ import {
   HEX_GREEN,
   HEX_RED,
   HEX_TEAL,
-} from './testData/colors';
+} from './data/colors';
 
 /**
  * RGB to CMYK

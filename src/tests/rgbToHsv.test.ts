@@ -1,4 +1,4 @@
-import rgbToHsv from './rgbToHsv';
+import rgbToHsv from '../rgbToHsv';
 import {
   RGB_BLACK,
   RGB_BLUE,
@@ -10,7 +10,7 @@ import {
   HSV_RED,
   HSV_TEAL,
   HSV_BLACK,
-} from './testData/colors';
+} from './data/colors';
 
 /**
  * RGB to HSV
