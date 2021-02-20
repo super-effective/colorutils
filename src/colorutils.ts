@@ -4,6 +4,7 @@ export {
 } from './colorTypes';
 
 export { default as cmykToRgb } from './cmykToRgb';
+export { default as cmykToHex } from './cmykToHex';
 export { default as getPerceivedLuminance } from './getPerceivedLuminance';
 export { default as hexToCmyk } from './hexToCmyk'
 export { default as hexToHsv } from './hexToHsv';
