@@ -65,6 +65,41 @@ export const RGB_MAGENTA = {
   blue: 255,
 };
 
+// Known CMYK Values
+export const CMYK_TEAL = {
+  cyan: 0.719626168224299,
+  magenta: 0,
+  yellow: 0.1074766355140187,
+  black: 0.16078431372549018,
+}
+
+export const CMYK_RED = {
+  cyan: 0,
+  magenta: 1,
+  yellow: 1,
+  black: 0,
+}
+
+export const CMYK_GREEN = {
+  cyan: 1,
+  magenta: 0,
+  yellow: 1,
+  black: 0,
+}
+
+export const CMYK_BLUE = {
+  cyan: 1,
+  magenta: 1,
+  yellow: 0,
+  black: 0,
+}
+
+export const CMYK_BLACK = {
+  cyan: 0,
+  magenta: 0,
+  yellow: 0,
+  black: 1,
+}
 
 // Known HSV Values
 export const HSV_TEAL = {

@@ -21,3 +21,11 @@ export type Hsv = {
   saturation: number;
   value: number;
 }
+
+
+export type Cmyk = {
+  cyan: number;
+  magenta: number;
+  yellow: number;
+  black: number;
+}
