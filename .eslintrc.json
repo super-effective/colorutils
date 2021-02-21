@@ -16,10 +16,13 @@
     "sourceType": "module"
   },
   "plugins": [
+    "@typescript-eslint"
   ],
   "rules": {
+    "eol-last": ["error", "always"],
     "max-len": ["warn", { "code": 120 }],
     "no-multiple-empty-lines": ["error", { "max": 2, "maxEOF": 0 }],
+    "no-param-reassign": "error",
     "no-plusplus": ["error", { "allowForLoopAfterthoughts": true }],
     "no-use-before-define": "off"
   },
