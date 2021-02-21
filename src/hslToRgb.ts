@@ -24,7 +24,7 @@ function hueToRgb(p: number, q: number, t: number) {
 
 /**
  * Takes given hue, saturation and lightness and returns the respective RGB values
- * @param {number} hue The hue of the color (0.0 - 1.0)
+ * @param {number} hue The hue of the color (0.0 - 360.0)
  * @param {number} saturation The saturation of the color (0.0 - 1.0)
  * @param {number} lightness The value of the color (0.0 - 1.0)
  * @returns {Rgb} The RGB values for the color

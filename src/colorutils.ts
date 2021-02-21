@@ -10,6 +10,7 @@ export { default as hexToCmyk } from './hexToCmyk'
 export { default as hexToHsl } from './hexToHsl';
 export { default as hexToHsv } from './hexToHsv';
 export { default as hexToRgb } from './hexToRgb';
+export { default as hslToHex } from './hslToHex';
 export { default as hslToRgb } from './hslToRgb';
 export { default as hsvToHex } from './hsvToHex';
 export { default as hsvToRgb } from './hsvToRgb';
