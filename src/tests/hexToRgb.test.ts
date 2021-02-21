@@ -38,6 +38,10 @@ describe('hexToRgb', () => {
     expect(white).toStrictEqual(RGB_BLACK);
   });
 
+  test('hexToRgb - empty throws an error', () => {
+    expect(() => hexToRgb('')).toThrow(Error);
+  });
+
   test('hexToRgb - short length throws an error', () => {
     expect(() => hexToRgb('#00')).toThrow(Error);
   });

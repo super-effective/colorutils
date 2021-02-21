@@ -17,6 +17,12 @@ export const RGB_TEAL = {
   blue: 191,
 };
 
+export const RGB_DARK_TEAL = {
+  red: 41,
+  green: 140,
+  blue: 125,
+};
+
 export const RGB_WHITE = {
   red: 255,
   green: 255,
@@ -107,6 +113,13 @@ export const HSL_TEAL = {
   saturation: 0.6525423728813562,
   lightness: 0.5372549019607843,
 };
+
+export const HSL_DARK_TEAL = {
+  hue: 170.90909090909088,
+  saturation: 0.5469613259668509,
+  lightness: 0.35490196078431374,
+};
+
 
 export const HSL_WHITE = {
   hue: 0,

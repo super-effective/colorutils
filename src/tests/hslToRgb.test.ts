@@ -1,5 +1,6 @@
 import hslToRgb from '../hslToRgb';
 import {
+  RGB_DARK_TEAL,
   RGB_TEAL,
   RGB_WHITE,
   RGB_BLACK,
@@ -18,6 +19,7 @@ import {
   HSL_TEAL,
   HSL_WHITE,
   HSL_YELLOW,
+  HSL_DARK_TEAL,
 } from './data/colors';
 
 /**
@@ -27,6 +29,11 @@ describe('hslToRgb', () => {
   test('hslToRgb - color', () => {
     const teal = hslToRgb(HSL_TEAL.hue, HSL_TEAL.saturation, HSL_TEAL.lightness);
     expect(teal).toStrictEqual(RGB_TEAL);
+  });
+
+  test('hslToRgb - dark color', () => {
+    const teal = hslToRgb(HSL_DARK_TEAL.hue, HSL_DARK_TEAL.saturation, HSL_DARK_TEAL.lightness);
+    expect(teal).toStrictEqual(RGB_DARK_TEAL);
   });
 
   test('hslToRgb - white', () => {

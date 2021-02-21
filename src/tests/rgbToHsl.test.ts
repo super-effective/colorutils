@@ -1,15 +1,17 @@
 import rgbToHsl from '../rgbToHsl';
 import {
-  RGB_BLACK,
-  RGB_BLUE,
-  RGB_GREEN,
-  RGB_RED,
-  RGB_TEAL,
+  HSL_BLACK,
   HSL_BLUE,
+  HSL_DARK_TEAL,
   HSL_GREEN,
   HSL_RED,
   HSL_TEAL,
-  HSL_BLACK,
+  RGB_BLACK,
+  RGB_BLUE,
+  RGB_DARK_TEAL,
+  RGB_GREEN,
+  RGB_RED,
+  RGB_TEAL,
 } from './data/colors';
 
 /**
@@ -19,6 +21,11 @@ describe('rgbToHsl', () => {
   test('rgbToHsl - multi value', () => {
     const teal = rgbToHsl(RGB_TEAL.red, RGB_TEAL.green, RGB_TEAL.blue);
     expect(teal).toStrictEqual(HSL_TEAL);
+  });
+
+  test('rgbToHsl - dark multi value', () => {
+    const teal = rgbToHsl(RGB_DARK_TEAL.red, RGB_DARK_TEAL.green, RGB_DARK_TEAL.blue);
+    expect(teal).toStrictEqual(HSL_DARK_TEAL);
   });
 
   test('rgbToHsl - red', () => {
