@@ -101,6 +101,62 @@ export const CMYK_BLACK = {
   black: 1,
 }
 
+// Known HSL Values
+export const HSL_TEAL = {
+  hue: 171.03896103896102,
+  saturation: 0.6525423728813562,
+  lightness: 0.5372549019607843,
+};
+
+export const HSL_WHITE = {
+  hue: 0,
+  saturation: 0,
+  lightness: 1,
+};
+
+export const HSL_BLACK = {
+  hue: 0,
+  saturation: 0,
+  lightness: 0,
+};
+
+export const HSL_RED = {
+  hue: 0,
+  saturation: 1,
+  lightness: 0.5,
+};
+
+export const HSL_YELLOW = {
+  hue: 60,
+  saturation: 1,
+  lightness: 0.5,
+};
+
+export const HSL_GREEN = {
+  hue: 120,
+  saturation: 1,
+  lightness: 0.5,
+};
+
+export const HSL_CYAN = {
+  hue: 180,
+  saturation: 1,
+  lightness: 0.5,
+};
+
+export const HSL_BLUE = {
+  hue: 240,
+  saturation: 1,
+  lightness: 0.5,
+};
+
+export const HSL_MAGENTA = {
+  hue: 300,
+  saturation: 1,
+  lightness: 0.5,
+};
+
+
 // Known HSV Values
 export const HSV_TEAL = {
   hue: 171.03896103896102,

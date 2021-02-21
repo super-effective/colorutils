@@ -13,5 +13,6 @@ export { default as hsvToHex } from './hsvToHex';
 export { default as hsvToRgb } from './hsvToRgb';
 export { default as rgbToCmyk } from './rgbToCmyk';
 export { default as rgbToHex } from './rgbToHex';
+export { default as rgbToHsl } from './rgbToHsl';
 export { default as rgbToHsv } from './rgbToHsv';
 export { default as sanitizeHex } from './sanitizeHex';

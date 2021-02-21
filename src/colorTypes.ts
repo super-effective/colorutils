@@ -11,6 +11,19 @@ export type Rgb = {
 }
 
 /**
+ * @typedef {Object} Hsl
+ * @property {number} hue - The hue of the color (0 - 360)
+ * @property {number} saturation - The saturation the color (0.0 - 1.0)
+ * @property {number} lightness - The lightness of the color (0.0 - 1.0)
+ */
+export type Hsl = {
+  hue: number;
+  saturation: number;
+  lightness: number;
+}
+
+
+/**
  * @typedef {Object} Hsv
  * @property {number} hue - The hue of the color (0 - 360)
  * @property {number} saturation - The saturation the color (0.0 - 1.0)
