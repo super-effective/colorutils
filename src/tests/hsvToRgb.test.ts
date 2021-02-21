@@ -1,5 +1,6 @@
 import hsvToRgb from '../hsvToRgb';
-import { HSV_TEAL,
+import {
+  HSV_TEAL,
   RGB_TEAL,
   HSV_WHITE,
   RGB_WHITE,

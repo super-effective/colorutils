@@ -1,5 +1,6 @@
 import hexToHsv from '../hexToHsv';
-import { HEX_TEAL,
+import {
+  HEX_TEAL,
   HSV_TEAL,
   HSV_WHITE,
   HEX_WHITE,
