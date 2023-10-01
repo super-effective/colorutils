@@ -1,6 +1,6 @@
 {
   "name": "@super-effective/colorutils",
-  "version": "2.1.1",
+  "version": "2.1.2",
   "description": "A color utility to help with converting between formats and getting color details",
   "keywords": [
     "color",
@@ -21,30 +21,30 @@
   "license": "MIT",
   "private": false,
   "scripts": {
-    "build": "rollup -c",
+    "build": "rollup -c --bundleConfigAsCjs",
     "prepublish": "yarn build",
     "test": "jest",
     "coverage": "jest --coverage"
   },
   "devDependencies": {
-    "@babel/core": "^7.18.2",
-    "@babel/preset-env": "^7.18.2",
-    "@babel/preset-typescript": "^7.17.12",
-    "@rollup/plugin-babel": "^5.3.1",
-    "@rollup/plugin-commonjs": "^22.0.0",
-    "@rollup/plugin-node-resolve": "^13.3.0",
-    "@types/jest": "^28.1.1",
-    "@typescript-eslint/eslint-plugin": "^5.27.1",
-    "@typescript-eslint/parser": "^5.27.1",
-    "babel-jest": "^28.1.0",
-    "eslint": "^8.17.0",
-    "eslint-plugin-import": "^2.26.0",
-    "jest": "^28.1.0",
-    "rollup": "^2.75.5",
+    "@babel/core": "^7.23.0",
+    "@babel/preset-env": "^7.22.20",
+    "@babel/preset-typescript": "^7.23.0",
+    "@rollup/plugin-babel": "^6.0.3",
+    "@rollup/plugin-commonjs": "^25.0.4",
+    "@rollup/plugin-node-resolve": "^15.2.1",
+    "@types/jest": "^29.5.5",
+    "@typescript-eslint/eslint-plugin": "^6.7.3",
+    "@typescript-eslint/parser": "^6.7.3",
+    "babel-jest": "^29.7.0",
+    "eslint": "^8.50.0",
+    "eslint-plugin-import": "^2.28.1",
+    "jest": "^29.7.0",
+    "rollup": "^3.29.4",
     "rollup-plugin-includepaths": "^0.2.4",
-    "rollup-plugin-typescript2": "^0.31.0",
-    "tslib": "^2.4.0",
-    "typescript": "^4.7.3"
+    "rollup-plugin-typescript2": "^0.36.0",
+    "tslib": "^2.6.2",
+    "typescript": "^5.2.2"
   },
   "babel": {
     "presets": [
