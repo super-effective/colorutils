@@ -1,4 +1,4 @@
-import { Rgb } from 'colorTypes';
+import { Rgb } from './colorTypes';
 
 /**
  * Converts a hex color string to its red, green, and blue component values
