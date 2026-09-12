@@ -56,5 +56,10 @@
     "presets": [
       "@babel/preset-env"
     ]
+  },
+  "resolutions": {
+    "**/anymatch/picomatch": "^2.3.2",
+    "rollup-plugin-typescript2/**/picomatch": "^2.3.2",
+    "**/test-exclude/**/brace-expansion": "^2.1.4"
   }
 }
